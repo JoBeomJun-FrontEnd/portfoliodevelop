@@ -1,50 +1,25 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + Yarn
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 사용 라이브러리
 
-Currently, two official plugins are available:
+- @tanstack/react-query: 상태 관리 및 서버 상태 비동기 데이터 관리 도구.
+- @tanstack/react-query-devtools: React Query 개발자 도구.
+- @vanilla-extract/css: TypeScript로 스타일을 작성하는 라이브러리.
+- axios: HTTP 요청을 보내는 라이브러리.
+- react: 사용자 인터페이스를 구축하기 위한 라이브러리.
+- react-dom: React의 DOM 관련 기능을 제공.
+- react-router-dom: React 애플리케이션에서 라우팅을 처리.
+- vite-plugin-compression: Vite 빌드 시 파일을 압축하는 플러그인.
+- zustand: 간단하고 사용하기 쉬운 상태 관리 라이브러리.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 빌드 도구
 
-## Expanding the ESLint configuration
+- vite
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 사용 방법
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- cd 클론할 디렉토리 명
+  - cd mydirectory
+- git clone https://github.com/JoBeomJun-FrontEnd/yarn_vite_tsc.git .
+- 터미널을 열고 yarn install 입력
+- yarn dev를 입력해 실행이 되는지 확인
