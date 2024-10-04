@@ -4,8 +4,9 @@ import { createRoot } from 'react-dom/client';
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { RouterProvider } from 'react-router-dom';
-import './index.css';
 import { router } from './router/index.tsx';
+import './styles/reset.css';
+import './index.css';
 
 const queryClient = new QueryClient();
 createRoot(document.getElementById('root')!).render(
