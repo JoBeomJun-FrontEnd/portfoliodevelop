@@ -1,32 +1,26 @@
-import { MyPageContainer } from './mypage.css';
+import Section from '../../components/section/Section';
 
 export const MyPage = () => {
   return (
     <>
-      <div className={MyPageContainer}>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
-      <div>MyPage</div>
+      <Section sectionName="Home">
+        <div>MyPage</div>
+      </Section>
+      <Section sectionName="About Me">
+        <div>MyPage</div>
+      </Section>
+      <Section sectionName="Skills">
+        <div>MyPage</div>
+      </Section>
+      <Section sectionName="Projects">
+        <div>MyPage</div>
+      </Section>
+      <Section sectionName="Contact">
+        <div>MyPage</div>
+      </Section>
+      <div>
+        MyPageasdasdasdsahgdashjgdgashjdghjasgdhjasghjdasghjdgashjgdjahsgdhjasgdhjasghjdasghjdgashjgdhjasgdhjasdasdasdhasjkdhasjkdhjkashdjkashdjkashdjkashjkdhasjkdhajksh
+      </div>
     </>
   );
 };
