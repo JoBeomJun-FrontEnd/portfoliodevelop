@@ -1,6 +1,16 @@
+import { theme } from './../../../styles/theme';
 import { style } from '@vanilla-extract/css';
-import { theme } from '../../../styles/theme';
 import { font, mediaQueries } from '../../../styles/font.css';
+
+const HeaderButton = style({
+  cursor: 'pointer',
+
+  color: theme.color.black,
+  transition: 'color 0.3s ease',
+  ':hover': {
+    color: theme.color.blue400,
+  },
+});
 
 export const HeaderWraper = style({
   position: 'fixed',
@@ -20,6 +30,7 @@ export const HeaderContainer = style({
 export const HeaderTitle = style([
   {
     marginLeft: '30px',
+
     '@media': {
       [mediaQueries.tablet]: {
         marginLeft: '20px',
@@ -29,6 +40,7 @@ export const HeaderTitle = style([
       },
     },
   },
+  HeaderButton,
   font.size.xl3,
   font.weight.bold,
 ]);
@@ -52,4 +64,4 @@ export const HeaderTextContainer = style({
   },
 });
 
-export const HeaderText = style([font.size.xl2, font.weight.semiBold]);
+export const HeaderText = style([HeaderButton, font.size.xl2, font.weight.semiBold]);

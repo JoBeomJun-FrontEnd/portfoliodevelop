@@ -6,10 +6,6 @@ export const AppContainer = style({
   alignItems: 'center',
 });
 
-export const OutletContainer = style({
-  maxWidth: '1140px',
-});
-
 export const HeaderHeight = style({
   height: '50px',
 });

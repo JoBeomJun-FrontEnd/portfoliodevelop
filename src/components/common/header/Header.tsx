@@ -1,26 +1,39 @@
 import { HeaderHeight } from '../../../styles/app.css';
 import { HeaderTextContainer, HeaderWraper, HeaderContainer, HeaderTitle, HeaderText } from './header.css';
+import ScrollToHook from '../../../hooks/ScrollToHook';
 
 const Header = () => {
+  const { handleScrollToSection } = ScrollToHook();
+
+  const handleClickButton = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const headerText = event.currentTarget.textContent;
+    if (headerText !== null) {
+      handleScrollToSection(headerText);
+    }
+  };
+
   return (
     <div className={`${HeaderWraper}  ${HeaderHeight}`}>
       <div className={HeaderContainer}>
-        <a href="" className={HeaderTitle}>
+        <button className={HeaderTitle} type="button" onClick={handleClickButton}>
           Header
-        </a>
+        </button>
         <div className={HeaderTextContainer}>
-          <a href="" className={HeaderText}>
-            About
-          </a>
-          <a href="" className={HeaderText}>
-            Skils
-          </a>
-          <a href="" className={HeaderText}>
+          <button className={HeaderText} type="button" onClick={handleClickButton}>
+            Home
+          </button>
+          <button className={HeaderText} type="button" onClick={handleClickButton}>
+            About Me
+          </button>
+          <button className={HeaderText} type="button" onClick={handleClickButton}>
+            Skills
+          </button>
+          <button className={HeaderText} type="button" onClick={handleClickButton}>
             Projects
-          </a>
-          <a href="" className={HeaderText}>
-            Projects
-          </a>
+          </button>
+          <button className={HeaderText} type="button" onClick={handleClickButton}>
+            Contact
+          </button>
         </div>
       </div>
     </div>
