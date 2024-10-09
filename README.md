@@ -10,6 +10,7 @@
 - react-dom: React의 DOM 관련 기능을 제공.
 - react-router-dom: React 애플리케이션에서 라우팅을 처리.
 - vite-plugin-compression: Vite 빌드 시 파일을 압축하는 플러그인.
+- vite-plugin-svgr: SVG 파일을 컴포넌트로 변환하여 사용하기 위한 플러그인
 - zustand: 간단하고 사용하기 쉬운 상태 관리 라이브러리.
 
 ## 빌드 도구

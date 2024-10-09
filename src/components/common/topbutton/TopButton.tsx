@@ -1,5 +1,5 @@
-import { top_up } from '../../../assets/assets';
 import { TopButtonContainer, TopButtonImage } from './topbutton.css';
+import EditColorAssets from '../../../assets/EditColorAssets';
 
 const TopButton = () => {
   const scrollToTop = () => {
@@ -8,7 +8,7 @@ const TopButton = () => {
 
   return (
     <div className={TopButtonContainer} onClick={scrollToTop}>
-      <img className={TopButtonImage} src={top_up} alt="위로 올라가기" />
+      <EditColorAssets className={TopButtonImage} svgName="top_up" />
     </div>
   );
 };
