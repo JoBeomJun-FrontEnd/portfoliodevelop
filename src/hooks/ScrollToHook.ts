@@ -3,9 +3,11 @@ import useScrollToStore from '../stores/useScrollToStore';
 const ScrollToHook = () => {
   const { positions } = useScrollToStore();
 
-  const handleScrollToSection = (key: string) => {
-    if (positions[key] !== undefined) {
+  const handleScrollToSection = (key?: string) => {
+    if (key !== undefined && positions[key] !== undefined) {
       window.scrollTo({ top: positions[key], behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 

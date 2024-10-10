@@ -29,8 +29,8 @@ const Section = ({ sectionName, children }: { sectionName: string; children: Rea
   return (
     <div className={`${SectionBackGround} ${backgroundClass()}`}>
       <section ref={sectionRef} className={SectionContainer}>
-        <h2 className={SectionTitle}>{sectionName}</h2>
-        <div>{children}</div>
+        <h1 className={SectionTitle}>{sectionName}</h1>
+        {children}
       </section>
     </div>
   );

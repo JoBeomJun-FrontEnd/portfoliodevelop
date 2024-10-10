@@ -17,7 +17,7 @@ export const HeaderWraper = style({
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
-  backgroundColor: theme.color.white,
+  backgroundColor: theme.color.gray200,
 });
 
 export const HeaderContainer = style({
