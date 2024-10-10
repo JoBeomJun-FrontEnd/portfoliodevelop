@@ -1,2 +1,5 @@
 import top_up from './topbutton/top_up.svg';
-export { top_up };
+import github from './projectcard/github.svg';
+import image from './projectcard/image.svg';
+import close from './projectcard/close.svg';
+export { top_up, github, image, close };
