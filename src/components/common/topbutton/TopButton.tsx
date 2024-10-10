@@ -1,13 +1,12 @@
 import { TopButtonContainer, TopButtonImage } from './topbutton.css';
 import EditColorAssets from '../../../assets/EditColorAssets';
+import ScrollToHook from '../../../hooks/ScrollToHook';
 
 const TopButton = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const { handleScrollToSection } = ScrollToHook();
 
   return (
-    <div className={TopButtonContainer} onClick={scrollToTop}>
+    <div className={TopButtonContainer} onClick={() => handleScrollToSection()}>
       <EditColorAssets className={TopButtonImage} svgName="top_up" />
     </div>
   );

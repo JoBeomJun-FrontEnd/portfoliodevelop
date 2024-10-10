@@ -4,7 +4,7 @@ import { font } from '../../styles/font.css';
 
 export const SectionBackGround = style({
   width: '100%',
-  height: '100vh',
+  padding: '100px 0',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -31,10 +31,13 @@ export const SectionHome = style({
 });
 
 export const SectionContainer = style({
+  boxSizing: 'border-box',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   maxWidth: '1140px',
+  width: '100%',
+  padding: '24px',
 });
 
 export const SectionTitle = style([{ color: theme.color.black }, font.size.xl5, font.weight.black]);
