@@ -62,11 +62,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ keyProp }) => {
                 {projects[keyProp].gitHubLink}
               </A>
             )}
-            {projects[keyProp].svgLink && (
-              <div className={ProjectCardOther} onClick={() => setPopUpActive(true, projects[keyProp].svgLink!)}>
+            {projects[keyProp].imageLink && (
+              <button
+                className={ProjectCardOther}
+                onClick={() => setPopUpActive(true, projects[keyProp].imageLink!)}
+                type="button"
+              >
                 <img src={image} alt="image" />
                 이미지
-              </div>
+              </button>
             )}
           </div>
         </div>
