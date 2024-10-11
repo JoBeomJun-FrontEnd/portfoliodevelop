@@ -92,6 +92,8 @@ export const ProjectCardOther = style({
   cursor: 'pointer',
   alignSelf: 'flex-start',
   display: 'flex',
+  alignItems: 'center',
+  gap: '2px',
   padding: '4px 12px',
   border: `1px solid ${theme.color.black}`,
   borderRadius: '4px',

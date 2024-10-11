@@ -6,5 +6,5 @@ export type ProjectInfo = {
   link?: string;
   library?: string[];
   gitHubLink?: string;
-  svgLink?: string;
+  imageLink?: string;
 };

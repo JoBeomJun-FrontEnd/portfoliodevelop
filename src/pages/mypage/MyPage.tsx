@@ -5,6 +5,7 @@ import useProjectCardStore from '../../stores/useProjectCardStore';
 
 export const MyPage = () => {
   const { popUpActive } = useProjectCardStore();
+
   return (
     <>
       {popUpActive && <ImagePopUp />}
