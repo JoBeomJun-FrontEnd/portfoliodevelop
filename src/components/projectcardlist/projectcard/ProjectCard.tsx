@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { github, image } from '../../../assets/assets';
 import useProjectCardStore from '../../../stores/useProjectCardStore';
 import A from '../../common/a/A';
@@ -5,14 +6,17 @@ import {
   ProjectCardContainer,
   ProjectCardInfoContainer,
   ProjectCardPersonnel,
-  ProjectCardSubTitle,
   ProjectCardTitle,
   ProjectCardLink,
   ProjectCardLibraryContainer,
   ProjectCardLibrary,
   ProjectCardOtherContainer,
   ProjectCardOther,
+  ProjectCardSubTitle,
+  ProjectCardInfo,
+  ProjectCardVisible,
 } from './projectcard.css';
+import useFlipOnViewHook from '../../../hooks/useFlipOnViewHook';
 
 type ProjectCardProps = {
   keyProp: string;
@@ -20,13 +24,15 @@ type ProjectCardProps = {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ keyProp }) => {
   const { projects, setPopUpActive } = useProjectCardStore();
+  const { isVisible, elementRef } = useFlipOnViewHook();
 
   const renderCard = () => {
-    if (projects[keyProp].title === undefined) {
-      return <></>;
-    } else {
+    if (projects[keyProp].title !== undefined) {
       return (
-        <div className={ProjectCardContainer}>
+        <div
+          ref={elementRef}
+          className={`${ProjectCardContainer} ${isVisible ? ProjectCardVisible.visible : ProjectCardVisible.hidden}`}
+        >
           {projects[keyProp].title && <h4 className={ProjectCardTitle}>{projects[keyProp].title}</h4>}
           {projects[keyProp].personnel && (
             <p className={ProjectCardPersonnel}>{projects[keyProp].personnel}인 프로젝트</p>
@@ -35,7 +41,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ keyProp }) => {
           {projects[keyProp].info && (
             <ul className={ProjectCardInfoContainer}>
               {projects[keyProp].info.map(info => {
-                return <li key={info}>{info}</li>;
+                return (
+                  <li className={ProjectCardInfo} key={info}>
+                    {info}
+                  </li>
+                );
               })}
             </ul>
           )}

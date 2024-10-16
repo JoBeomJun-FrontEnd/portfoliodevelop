@@ -1,98 +1,43 @@
 import { style } from '@vanilla-extract/css';
 
-export const mediaQueries = {
-  tablet: 'screen and (max-width: 768px)',
-  mobile: 'screen and (max-width: 480px)',
-};
-
 const fontSize = {
-  base: {
-    xs: '12px',
-    sm: '14px',
-    base: '16px',
-    lg: '18px',
-    xl: '20px',
-    xl2: '24px',
-    xl3: '30px',
-    xl4: '36px',
-    xl5: '40px',
-  },
-  tablet: {
-    xs: '10px',
-    sm: '12px',
-    base: '14px',
-    lg: '16px',
-    xl: '18px',
-    xl2: '20px',
-    xl3: '24px',
-    xl4: '30px',
-    xl5: '36px',
-  },
-  mobile: {
-    xs: '8px',
-    sm: '10px',
-    base: '12px',
-    lg: '14px',
-    xl: '16px',
-    xl2: '18px',
-    xl3: '20px',
-    xl4: '24px',
-    xl5: '30px',
-  },
+  xs: '0.75rem',
+  sm: '0.875rem',
+  base: '1rem',
+  lg: '1.125rem',
+  xl: '1.25rem',
+  xl2: '1.5rem',
+  xl3: '1.875rem',
+  xl4: '2.25rem',
+  xl5: '2.5rem',
+  xl6: '2.75rem',
+  xl7: '3rem',
+  xl8: '3.25rem',
+  xl9: '3.5rem',
 };
 
 const lineHeight = {
-  base: {
-    xs: '16px',
-    sm: '20px',
-    base: '24px',
-    lg: '28px',
-    xl: '28px',
-    xl2: '32px',
-    xl3: '36px',
-    xl4: '40px',
-    xl5: '44px',
-  },
-  tablet: {
-    xs: '16px',
-    sm: '18px',
-    base: '20px',
-    lg: '22px',
-    xl: '24px',
-    xl2: '26px',
-    xl3: '28px',
-    xl4: '30px',
-    xl5: '32px',
-  },
-  mobile: {
-    xs: '14px',
-    sm: '16px',
-    base: '18px',
-    lg: '20px',
-    xl: '22px',
-    xl2: '26px',
-    xl3: '28px',
-    xl4: '32px',
-    xl5: '36px',
-  },
+  xs: '1rem',
+  sm: '1.25rem',
+  base: '1.5rem',
+  lg: '1.75rem',
+  xl: '1.75rem',
+  xl2: '2rem',
+  xl3: '2.25rem',
+  xl4: '2.5rem',
+  xl5: '2.75rem',
+  xl6: '3rem',
+  xl7: '3.25rem',
+  xl8: '3.5rem',
+  xl9: '3.75rem',
 };
 
-type Size = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | 'xl2' | 'xl3' | 'xl4' | 'xl5';
+type Size = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | 'xl2' | 'xl3' | 'xl4' | 'xl5' | 'xl6' | 'xl7' | 'xl8' | 'xl9';
 
 const createSizeStyle = (size: Size) =>
   style({
-    fontSize: fontSize.base[size],
-    lineHeight: lineHeight.base[size],
-    '@media': {
-      [mediaQueries.tablet]: {
-        fontSize: fontSize.tablet[size],
-        lineHeight: lineHeight.tablet[size],
-      },
-      [mediaQueries.mobile]: {
-        fontSize: fontSize.mobile[size],
-        lineHeight: lineHeight.mobile[size],
-      },
-    },
+    fontSize: fontSize[size],
+    lineHeight: lineHeight[size],
   });
 
 export const font = {
@@ -106,6 +51,10 @@ export const font = {
     xl3: createSizeStyle('xl3'),
     xl4: createSizeStyle('xl4'),
     xl5: createSizeStyle('xl5'),
+    xl6: createSizeStyle('xl6'),
+    xl7: createSizeStyle('xl7'),
+    xl8: createSizeStyle('xl8'),
+    xl9: createSizeStyle('xl9'),
   },
   weight: {
     thin: { fontWeight: '100' },

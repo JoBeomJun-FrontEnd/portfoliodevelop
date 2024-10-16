@@ -10,34 +10,22 @@ export const SectionBackGround = style({
   alignItems: 'center',
 });
 
-export const SectionBackGroundColor = styleVariants({
-  home: {},
-  about: {
-    backgroundColor: theme.color.white,
-  },
-  skills: {
-    backgroundColor: theme.color.yellow400,
-  },
-  projects: {
-    backgroundColor: theme.color.blue400,
-  },
-  contact: {
-    backgroundColor: theme.color.orange300,
-  },
-});
-
-export const SectionHome = style({
-  backgroundColor: theme.color.white,
-});
-
 export const SectionContainer = style({
   boxSizing: 'border-box',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  maxWidth: '1140px',
   width: '100%',
-  padding: '24px',
+  padding: '24px 0',
 });
 
-export const SectionTitle = style([{ color: theme.color.black }, font.size.xl5, font.weight.black]);
+export const SectionTitle = style([
+  {
+    paddingBottom: '30px',
+    marginBottom: '70px',
+    borderBottom: `2px solid currentColor `,
+    color: theme.color.white,
+  },
+  font.size.xl9,
+  font.weight.black,
+]);

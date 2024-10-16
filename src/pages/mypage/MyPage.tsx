@@ -1,3 +1,4 @@
+import AboutMe from '../../components/aboutme/AboutMe';
 import ImagePopUp from '../../components/projectcardlist/projectcard/imagepopup/ImagePopUp';
 import ProjectCardList from '../../components/projectcardlist/ProjectCardList';
 import Section from '../../components/section/Section';
@@ -9,21 +10,15 @@ export const MyPage = () => {
   return (
     <>
       {popUpActive && <ImagePopUp />}
-      <Section sectionName="Home">
-        <div>MyPage</div>
-      </Section>
+      <Section sectionName="Home"></Section>
       <Section sectionName="About Me">
-        <div>MyPage</div>
+        <AboutMe />
       </Section>
-      <Section sectionName="Skills">
-        <div>MyPage</div>
-      </Section>
+      <Section sectionName="Skills"></Section>
       <Section sectionName="Projects">
         <ProjectCardList />
       </Section>
-      <Section sectionName="Contact">
-        <div>MyPage</div>
-      </Section>
+      <Section sectionName="Contact"></Section>
     </>
   );
 };

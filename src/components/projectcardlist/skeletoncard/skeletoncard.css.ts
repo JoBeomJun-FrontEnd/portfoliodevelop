@@ -1,6 +1,5 @@
 import { keyframes, style } from '@vanilla-extract/css';
-import { font, mediaQueries } from '../../../styles/font.css';
-import { theme } from '../../../styles/theme';
+import { theme, mediaQueries } from '../../../styles/theme';
 
 const gradientAnimation = keyframes({
   '0%': {

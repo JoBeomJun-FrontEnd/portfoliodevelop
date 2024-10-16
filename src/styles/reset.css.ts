@@ -1,5 +1,6 @@
 // reset.css.ts
 import { globalStyle } from '@vanilla-extract/css';
+import { mediaQueries } from './theme';
 
 globalStyle(
   'html, body, button, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video',
@@ -12,6 +13,15 @@ globalStyle(
     textDecoration: 'none',
     color: 'inherit',
     backgroundColor: 'transparent',
+    fontSize: '100%',
+    '@media': {
+      [mediaQueries.tablet]: {
+        fontSize: '87.5%',
+      },
+      [mediaQueries.mobile]: {
+        fontSize: '75%',
+      },
+    },
   }
 );
 
@@ -38,4 +48,8 @@ globalStyle('blockquote:before, blockquote:after, q:before, q:after', {
 globalStyle('table', {
   borderCollapse: 'collapse',
   borderSpacing: 0,
+});
+
+globalStyle('body::-webkit-scrollbar', {
+  display: 'none',
 });

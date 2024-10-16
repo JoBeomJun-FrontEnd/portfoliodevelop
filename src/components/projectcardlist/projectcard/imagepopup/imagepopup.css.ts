@@ -4,6 +4,7 @@ import { theme } from '../../../../styles/theme';
 export const ImagePopUpBackGround = style({
   boxSizing: 'border-box',
   position: 'fixed',
+  left: '0',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',

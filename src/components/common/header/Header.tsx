@@ -1,9 +1,10 @@
+import { HeaderTextContainer, HeaderContainer, HeaderTitle, HeaderText, HeaderWraper } from './header.css';
+import useScrollToHook from '../../../hooks/useScrollToHook';
+import Button from '../button/Button';
 import { HeaderHeight } from '../../../styles/app.css';
-import { HeaderTextContainer, HeaderWraper, HeaderContainer, HeaderTitle, HeaderText } from './header.css';
-import ScrollToHook from '../../../hooks/ScrollToHook';
 
 const Header = () => {
-  const { handleScrollToSection } = ScrollToHook();
+  const { handleScrollToSection } = useScrollToHook();
 
   const handleClickButton = (event: React.MouseEvent<HTMLButtonElement>) => {
     const headerText = event.currentTarget.textContent;
@@ -15,25 +16,25 @@ const Header = () => {
   return (
     <div className={`${HeaderWraper}  ${HeaderHeight}`}>
       <div className={HeaderContainer}>
-        <button className={HeaderTitle} type="button" onClick={handleClickButton}>
+        <Button className={HeaderTitle} onClick={handleClickButton}>
           Header
-        </button>
+        </Button>
         <div className={HeaderTextContainer}>
-          <button className={HeaderText} type="button" onClick={handleClickButton}>
+          <Button className={HeaderText} onClick={handleClickButton}>
             Home
-          </button>
-          <button className={HeaderText} type="button" onClick={handleClickButton}>
+          </Button>
+          <Button className={HeaderText} onClick={handleClickButton}>
             About Me
-          </button>
-          <button className={HeaderText} type="button" onClick={handleClickButton}>
+          </Button>
+          <Button className={HeaderText} onClick={handleClickButton}>
             Skills
-          </button>
-          <button className={HeaderText} type="button" onClick={handleClickButton}>
+          </Button>
+          <Button className={HeaderText} onClick={handleClickButton}>
             Projects
-          </button>
-          <button className={HeaderText} type="button" onClick={handleClickButton}>
+          </Button>
+          <Button className={HeaderText} onClick={handleClickButton}>
             Contact
-          </button>
+          </Button>
         </div>
       </div>
     </div>

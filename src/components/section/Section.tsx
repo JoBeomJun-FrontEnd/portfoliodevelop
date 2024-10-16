@@ -1,8 +1,8 @@
 import { ReactNode, useEffect, useRef } from 'react';
-import { SectionBackGround, SectionBackGroundColor, SectionContainer, SectionTitle } from './section.css';
+import { SectionBackGround, SectionContainer, SectionTitle } from './section.css';
 import useScrollToStore from '../../stores/useScrollToStore';
 
-const Section = ({ sectionName, children }: { sectionName: string; children: ReactNode }) => {
+const Section = ({ sectionName, children }: { sectionName: string; children?: ReactNode }) => {
   const sectionRef = useRef<HTMLHeadingElement>(null);
   const { setPositions } = useScrollToStore();
 
@@ -11,28 +11,14 @@ const Section = ({ sectionName, children }: { sectionName: string; children: Rea
     setPositions(sectionName, top - 50 + window.scrollY);
   }, []);
 
-  const backgroundClass = () => {
-    switch (sectionName) {
-      case 'Home':
-        return SectionBackGroundColor.home;
-      case 'About Me':
-        return SectionBackGroundColor.about;
-      case 'Skills':
-        return SectionBackGroundColor.skills;
-      case 'Projects':
-        return SectionBackGroundColor.projects;
-      case 'Contact':
-        return SectionBackGroundColor.contact;
-    }
-  };
-
   return (
-    <div className={`${SectionBackGround} ${backgroundClass()}`}>
+    <div className={SectionBackGround}>
       <section ref={sectionRef} className={SectionContainer}>
         <h1 className={SectionTitle}>{sectionName}</h1>
-        {children}
+        {children && children}
       </section>
     </div>
   );
 };
+
 export default Section;
