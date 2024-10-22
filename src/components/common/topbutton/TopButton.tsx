@@ -1,9 +1,9 @@
 import { TopButtonContainer, TopButtonImage } from './topbutton.css';
 import EditColorAssets from '../../../assets/EditColorAssets';
-import ScrollToHook from '../../../hooks/ScrollToHook';
+import useScrollToHook from '../../../hooks/useScrollToHook';
 
 const TopButton = () => {
-  const { handleScrollToSection } = ScrollToHook();
+  const { handleScrollToSection } = useScrollToHook();
 
   return (
     <div className={TopButtonContainer} onClick={() => handleScrollToSection()}>

@@ -5,7 +5,12 @@ export const AppContainer = style({
   flexDirection: 'column',
   alignItems: 'center',
 });
-
 export const HeaderHeight = style({
-  height: '50px',
+  height: '70px',
+});
+
+export const OutletContainer = style({
+  maxWidth: '1140px',
+  minWidth: '375px',
+  width: '90%',
 });

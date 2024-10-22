@@ -1,60 +1,52 @@
 import { style } from '@vanilla-extract/css';
-import { theme } from '../../../styles/theme';
-import { mediaQueries } from '../../../styles/font.css';
+import { theme, mediaQueries } from '../../../styles/theme';
+import { backgroundColorTransition } from '../../../styles/background.css';
 
-export const TopButtonContainer = style({
-  cursor: 'pointer',
-  position: 'fixed',
-  top: '90%',
-  left: '85%',
-  width: '64px',
-  height: '64px',
+export const TopButtonContainer = style([
+  {
+    cursor: 'pointer',
+    position: 'fixed',
+    top: '90%',
+    left: '90%',
+    width: '72px',
+    height: '72px',
 
-  transition: 'border-color 0.2s ease',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: theme.color.gray400,
 
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+    borderRadius: '50%',
 
-  border: `5px solid ${theme.color.black}`,
-  borderRadius: '50%',
-  ':hover': {
-    borderColor: theme.color.red400,
-  },
-
-  '@media': {
-    [mediaQueries.tablet]: {
-      width: '48px',
-      height: '48px',
-      border: `4px solid ${theme.color.black}`,
-    },
-    [mediaQueries.mobile]: {
-      width: '36px',
-      height: '36px',
-      border: `3px solid ${theme.color.black}`,
+    '@media': {
+      [mediaQueries.tablet]: {
+        width: '48px',
+        height: '48px',
+      },
+      [mediaQueries.mobile]: {
+        width: '36px',
+        height: '36px',
+      },
     },
   },
-});
+  backgroundColorTransition('orange400'),
+]);
 
 export const TopButtonImage = style({
   width: '48px',
   height: '48px',
 
-  transition: 'all 0.2s ease',
-
-  stroke: theme.color.black,
-  fill: theme.color.black,
-  selectors: {
-    [`${TopButtonContainer}:hover &`]: {
-      stroke: theme.color.red400,
-      fill: theme.color.red400,
-    },
-  },
+  stroke: theme.color.white,
 
   '@media': {
     [mediaQueries.tablet]: {
       width: '36px',
       height: '36px',
+      selectors: {
+        [`${TopButtonContainer}:active &`]: {
+          stroke: theme.color.orange400,
+        },
+      },
     },
     [mediaQueries.mobile]: {
       width: '24px',

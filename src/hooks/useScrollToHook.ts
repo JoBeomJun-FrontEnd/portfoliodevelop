@@ -1,6 +1,6 @@
 import useScrollToStore from '../stores/useScrollToStore';
 
-const ScrollToHook = () => {
+const useScrollToHook = () => {
   const { positions } = useScrollToStore();
 
   const handleScrollToSection = (key?: string) => {
@@ -13,4 +13,4 @@ const ScrollToHook = () => {
 
   return { handleScrollToSection };
 };
-export default ScrollToHook;
+export default useScrollToHook;
