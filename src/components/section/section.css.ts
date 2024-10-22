@@ -1,10 +1,10 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 import { theme } from '../../styles/theme';
 import { font } from '../../styles/font.css';
 
 export const SectionBackGround = style({
   width: '100%',
-  padding: '100px 0',
+  paddingTop: '100px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

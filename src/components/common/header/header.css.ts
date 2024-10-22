@@ -1,20 +1,14 @@
-import { theme, mediaQueries } from './../../../styles/theme';
+import { theme, mediaQueries } from '../../../styles/theme';
 import { style } from '@vanilla-extract/css';
 import { font } from '../../../styles/font.css';
+import { backgroundColorTransition } from '../../../styles/background.css';
 
-const HeaderButton = style({
-  color: theme.color.white,
-  transition: 'color 0.3s ease',
-  '@media': {
-    '(hover: hover) and (pointer: fine)': {
-      selectors: {
-        [`&:hover`]: {
-          color: theme.color.orange400,
-        },
-      },
-    },
+const HeaderButton = style([
+  {
+    color: theme.color.white,
   },
-});
+  backgroundColorTransition('orange400'),
+]);
 
 export const HeaderWraper = style({
   position: 'fixed',
@@ -22,7 +16,8 @@ export const HeaderWraper = style({
   height: '70px',
   display: 'flex',
   justifyContent: 'center',
-  backgroundColor: theme.color.gray200,
+  backgroundColor: theme.color.opacity50,
+  zIndex: '100',
 });
 
 export const HeaderContainer = style({

@@ -1,6 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 import { font } from '../../../styles/font.css';
 import { theme, mediaQueries } from '../../../styles/theme';
+import { backgroundColorTransition } from '../../../styles/background.css';
 
 export const ProjectCardContainer = style({
   boxSizing: 'border-box',
@@ -37,7 +38,7 @@ export const ProjectCardTitle = style([
   {
     color: theme.color.white,
     alignSelf: 'flex-start',
-    backgroundColor: theme.color.blue400,
+    backgroundColor: theme.color.orange400,
     padding: '4px 12px',
     borderRadius: '8px',
   },
@@ -104,7 +105,9 @@ export const ProjectCardOther = style([
     padding: '4px 12px',
     border: `1px solid ${theme.color.black}`,
     borderRadius: '4px',
-    backgroundColor: theme.color.white,
+    color: theme.color.white,
+    backgroundColor: theme.color.gray400,
   },
+  backgroundColorTransition('orange400'),
   font.size.base,
 ]);

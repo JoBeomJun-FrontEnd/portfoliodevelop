@@ -1,38 +1,34 @@
 import A from '../common/a/A';
+import Frame from '../common/frame/Frame';
 import {
-  AboutMeContainer,
-  AboutMeElement,
-  AboutMeElements,
-  AboutMeElementText,
-  AboutMeInfo,
-  AboutMeInfoButton,
-  AboutMeInfoOutLineBack,
-  AboutMeInfoButtons,
-  AboutMeInfoContainer,
-  AboutMeInfoOutLine,
-  AboutMeWraper,
-  AboutMeImage,
-  Text,
+  AboutMe_Element,
+  AboutMe_Elements,
+  AboutMe_ElementText,
+  AboutMe_InfoButton,
+  AboutMe_InfoOutLineBack,
+  AboutMe_InfoButtons,
+  AboutMe_InfoOutLine,
+  AboutMe_Text,
 } from './aboutme.css';
 
-const AboutMe = () => {
+const AboutMe_ = () => {
   const infoElement: { [key: string]: string }[] = [
     { 이름: '조범준' },
     { 연락처: '010 - 4067 - 1637' },
     { 생년월일: '1998 - 12 - 15' },
-    { 위치: '서울특별시 성북구' },
-    { 이메일: 'oreasv3@gmail.com' },
     { 학력: '한림대학교(빅데이터과)' },
+    { 이메일: 'oreasv3@gmail.com' },
+    { 위치: '서울특별시 성북구' },
   ];
 
   const elementRender = () => {
     return (
-      <div className={AboutMeElement}>
+      <div className={AboutMe_Element}>
         {infoElement.map((item, index) =>
           Object.entries(item).map(([key, value]) => (
-            <div key={`${key}-${index}`}>
-              <div className={Text}>{key}</div>
-              <div className={AboutMeElementText}>{value}</div>
+            <div key={`${key}-${index}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div className={AboutMe_Text}>{key}</div>
+              <div className={AboutMe_ElementText}>{value}</div>
             </div>
           ))
         )}
@@ -41,29 +37,21 @@ const AboutMe = () => {
   };
 
   return (
-    <div className={AboutMeWraper}>
-      <div className={AboutMeContainer}>
-        <div className={AboutMeInfoContainer}>
-          <div className={AboutMeImage}></div>
-          <div className={AboutMeInfo}>
-            <div className={AboutMeInfoOutLine}></div>
-            <div className={AboutMeInfoOutLineBack}></div>
-            <div className={AboutMeElements}>
-              {elementRender()}
-              <div className={AboutMeInfoButtons}>
-                <A className={AboutMeInfoButton} href="">
-                  GITHUB
-                </A>
-                <A className={AboutMeInfoButton} href="">
-                  BLOG
-                </A>
-              </div>
-            </div>
-          </div>
+    <Frame>
+      <div className={AboutMe_Elements}>
+        {elementRender()}
+        <div className={AboutMe_InfoButtons}>
+          <A className={AboutMe_InfoButton} href="https://github.com/JoBeomJun-FrontEnd">
+            GITHUB
+          </A>
+          <A className={AboutMe_InfoButton} href="">
+            BLOG
+          </A>
         </div>
-        <div></div>
       </div>
-    </div>
+      <div className={AboutMe_InfoOutLine}></div>
+      <div className={AboutMe_InfoOutLineBack}></div>
+    </Frame>
   );
 };
-export default AboutMe;
+export default AboutMe_;

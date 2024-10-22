@@ -1,3 +1,6 @@
+import { style } from '@vanilla-extract/css';
+import { ColorType } from '../types/colortype';
+
 export const theme = {
   color: {
     white: '#FFFFFF',
@@ -15,6 +18,16 @@ export const theme = {
     gray700: '#4d4d4d',
     gray800: '#333333',
     gray900: '#1a1a1a',
+
+    brown100: '#f7e6e6',
+    brown200: '#e8c8c8',
+    brown300: '#d1a3a3',
+    brown400: '#b97f7f',
+    brown500: '#996666',
+    brown600: '#804d4d',
+    brown700: '#663333',
+    brown800: '#4d1a1a',
+    brown900: '#330d0d',
 
     blue100: '#cce4ff',
     blue200: '#99c9ff',
