@@ -1,6 +1,3 @@
-import { style } from '@vanilla-extract/css';
-import { ColorType } from '../types/colortype';
-
 export const theme = {
   color: {
     white: '#FFFFFF',
@@ -101,7 +98,12 @@ export const theme = {
   },
 };
 
+export const widthSize = {
+  tablet: 768,
+  mobile: 480,
+};
+
 export const mediaQueries = {
-  tablet: 'screen and (max-width: 768px)',
-  mobile: 'screen and (max-width: 480px)',
+  tablet: `screen and (max-width: ${widthSize.tablet}px)`,
+  mobile: `screen and (max-width: ${widthSize.mobile}px)`,
 };

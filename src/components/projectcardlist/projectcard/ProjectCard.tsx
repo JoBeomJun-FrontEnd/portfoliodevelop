@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { github, image } from '../../../assets/assets';
 import useProjectCardStore from '../../../stores/useProjectCardStore';
 import A from '../../common/a/A';
@@ -51,7 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ keyProp }) => {
           )}
           {projects[keyProp].link && (
             <A className={ProjectCardLink} href={projects[keyProp].link}>
-              {projects[keyProp].link}
+              사이트 링크
             </A>
           )}
           {projects[keyProp].library && (
@@ -69,7 +68,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ keyProp }) => {
             {projects[keyProp].gitHubLink && (
               <A className={ProjectCardOther} href={projects[keyProp].gitHubLink}>
                 <img src={github} alt="github" />
-                {projects[keyProp].gitHubLink}
+                깃허브 링크
               </A>
             )}
             {projects[keyProp].imageLink && (

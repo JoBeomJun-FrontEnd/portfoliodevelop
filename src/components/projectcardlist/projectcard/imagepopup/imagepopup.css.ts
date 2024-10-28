@@ -4,6 +4,7 @@ import { theme } from '../../../../styles/theme';
 export const ImagePopUpBackGround = style({
   boxSizing: 'border-box',
   position: 'fixed',
+  top: '0',
   left: '0',
   display: 'flex',
   alignItems: 'center',
@@ -11,7 +12,8 @@ export const ImagePopUpBackGround = style({
   padding: '8px',
   width: '100vw',
   height: '100vh',
-  backgroundColor: '#00000070',
+  backgroundColor: theme.color.opacity70,
+  zIndex: '100',
 });
 
 export const ImagePopUpBox = style({
@@ -41,6 +43,8 @@ export const ImagePopUpContentContainer = style({
   minHeight: '438px',
   alignItems: 'center',
   justifyContent: 'center',
+  backgroundColor: theme.color.gray900,
+  borderRadius: '2rem',
 });
 
 export const ImagePopUpContent = style({

@@ -4,7 +4,7 @@ import { theme } from '../../styles/theme';
 
 export const SkillsContainer = style({
   display: 'grid',
-  gridTemplateColumns: '20% auto',
+  gridTemplateColumns: '25% auto',
   gap: '8px',
   alignItems: 'center',
   border: `3px solid ${theme.color.orange400}`,

@@ -9,7 +9,7 @@ export const ProjectCardContainer = style({
   flexDirection: 'column',
   width: 'calc((100% - 32px) / 2)',
   padding: '32px',
-  gap: '8px',
+  gap: '16px',
   borderRadius: '16px',
   boxShadow: `0px 0px 5px 0px ${theme.color.gray600}`,
   backgroundColor: theme.color.white,
@@ -61,6 +61,8 @@ export const ProjectCardSubTitle = style([font.size.lg, font.weight.medium]);
 export const ProjectCardInfoContainer = style({
   listStyle: 'inherit',
   paddingLeft: '16px',
+  display: 'flex',
+  flexDirection: 'column',
 });
 
 export const ProjectCardInfo = style([font.size.sm]);
@@ -75,6 +77,7 @@ export const ProjectCardLink = style([
 
 export const ProjectCardLibraryContainer = style({
   display: 'flex',
+  flexWrap: 'wrap',
   gap: '8px',
   marginBottom: '8px',
 });

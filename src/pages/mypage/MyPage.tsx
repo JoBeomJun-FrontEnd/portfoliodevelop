@@ -1,5 +1,6 @@
 import AboutMe from '../../components/aboutme/AboutMe';
 import Home from '../../components/home_/Home';
+import Learn from '../../components/learn/Learn';
 import ImagePopUp from '../../components/projectcardlist/projectcard/imagepopup/ImagePopUp';
 import ProjectCardList from '../../components/projectcardlist/ProjectCardList';
 import Section from '../../components/section/Section';
@@ -20,6 +21,9 @@ export const MyPage = () => {
       </Section>
       <Section sectionName="Skills">
         <Skills />
+      </Section>
+      <Section sectionName="Learn">
+        <Learn />
       </Section>
       <Section sectionName="Projects">
         <ProjectCardList />
