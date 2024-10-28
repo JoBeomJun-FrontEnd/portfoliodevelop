@@ -11,7 +11,7 @@ export const FrameWraper = style({
   width: '100%',
   height: '100%',
   borderRadius: '24px',
-  padding: '30px 0',
+  padding: '50px 0',
 });
 
 export const FrameContainer = style({

@@ -3,11 +3,13 @@ import { theme } from '../../styles/theme';
 import { font } from '../../styles/font.css';
 
 export const SectionBackGround = style({
+  position: 'relative',
   width: '100%',
-  paddingTop: '100px',
+  margin: '100px 0',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  zIndex: '0',
 });
 
 export const SectionContainer = style({
@@ -16,7 +18,7 @@ export const SectionContainer = style({
   flexDirection: 'column',
   alignItems: 'center',
   width: '100%',
-  padding: '24px 0',
+  paddingTop: '24px',
 });
 
 export const SectionTitle = style([

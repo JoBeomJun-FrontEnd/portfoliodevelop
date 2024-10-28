@@ -1,5 +1,5 @@
 import { theme, mediaQueries } from '../../../styles/theme';
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 import { font } from '../../../styles/font.css';
 import { backgroundColorTransition } from '../../../styles/background.css';
 
@@ -17,17 +17,25 @@ export const HeaderWraper = style({
   display: 'flex',
   justifyContent: 'center',
   backgroundColor: theme.color.opacity50,
-  zIndex: '100',
+  zIndex: '99',
 });
 
 export const HeaderContainer = style({
-  width: '100%',
+  width: '90%',
   display: 'flex',
   maxWidth: '1140px',
   alignItems: 'center',
+  justifyContent: 'space-between',
 });
 
-export const HeaderTitle = style([HeaderButton, font.size.xl3, font.weight.bold]);
+export const HeaderTitle = style([
+  {
+    width: '100%',
+    color: theme.color.white,
+  },
+  font.size.xl3,
+  font.weight.bold,
+]);
 
 export const HeaderTextContainer = style({
   width: '100%',
@@ -35,14 +43,37 @@ export const HeaderTextContainer = style({
   alignItems: 'center',
   justifyContent: 'flex-end',
   gap: '30px',
+
+  transition: 'right 0.3s ease',
+
   '@media': {
     [mediaQueries.tablet]: {
       gap: '20px',
     },
     [mediaQueries.mobile]: {
-      gap: '10px',
+      position: 'fixed',
+      top: '70px',
+      width: '30%',
+      height: '200px',
+      background: theme.color.opacity50,
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      borderRadius: '0 0 12px 12px',
     },
   },
 });
 
+export const HeaderTextContainerMove = styleVariants({
+  active: {
+    right: '0',
+  },
+  inactive: {
+    right: '-30%',
+  },
+});
+
 export const HeaderText = style([HeaderButton, font.size.xl, font.weight.semiBold]);
+
+export const HeaderHambuger = style({
+  fill: theme.color.orange400,
+});

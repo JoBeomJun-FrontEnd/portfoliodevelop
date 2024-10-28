@@ -15,6 +15,7 @@ const Skills = () => {
         { blue400: 'React' },
         { brown600: 'Zustand' },
         { pink500: 'TanStackQuery' },
+        { purple400: 'React Router' },
         { blue300: 'Tailwind CSS' },
         { yellow600: 'VanillaExtract CSS' },
       ],

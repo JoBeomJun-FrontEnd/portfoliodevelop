@@ -8,7 +8,7 @@ const Section = ({ sectionName, children }: { sectionName?: string; children?: R
 
   useEffect(() => {
     const { top } = sectionRef.current?.getBoundingClientRect() || { top: 0 };
-    setPositions(sectionName ? sectionName : 'Home', top - 50 + window.scrollY);
+    setPositions(sectionName ? sectionName : 'Home', top - 70 + window.scrollY);
   }, []);
 
   return (

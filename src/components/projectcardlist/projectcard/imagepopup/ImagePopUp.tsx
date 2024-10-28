@@ -36,7 +36,7 @@ const ImagePopUp = () => {
           <img src={close} alt="close" onClick={handleClickBackGround} />
         </div>
         <div className={ImagePopUpContentContainer}>
-          <img className={ImagePopUpContent} src={imageLink} alt={imageLink} />
+          <img className={ImagePopUpContent} src={imageLink} alt="이미지" />
         </div>
       </div>
     </div>
