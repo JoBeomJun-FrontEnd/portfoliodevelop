@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 import { theme } from '../../styles/theme';
 import { font } from '../../styles/font.css';
 
@@ -26,8 +26,17 @@ export const SectionTitle = style([
     paddingBottom: '30px',
     marginBottom: '70px',
     borderBottom: `2px solid currentColor `,
-    color: theme.color.white,
+    transition: 'color 0.3s',
   },
   font.size.xl9,
   font.weight.black,
 ]);
+
+export const SectionTitleColor = styleVariants({
+  true: {
+    color: theme.color.black,
+  },
+  false: {
+    color: theme.color.white,
+  },
+});

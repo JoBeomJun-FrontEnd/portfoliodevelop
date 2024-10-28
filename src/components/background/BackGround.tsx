@@ -2,9 +2,12 @@ import { initParticlesEngine, Particles } from '@tsparticles/react';
 import { useEffect, useState } from 'react';
 import { loadFull } from 'tsparticles';
 import { theme } from '../../styles/theme';
+import useScrollToHook from '../../hooks/useScrollToHook';
+import { BackgroundContainer, BackgroundIsBelow } from './background.css';
 
 const BackGround = () => {
   const [init, setInit] = useState(false);
+  const { isBelow } = useScrollToHook();
 
   useEffect(() => {
     initParticlesEngine(async engine => {
@@ -15,7 +18,7 @@ const BackGround = () => {
   }, []);
 
   return (
-    <>
+    <div className={`${BackgroundContainer} ${isBelow ? BackgroundIsBelow.true : BackgroundIsBelow.false}`}>
       {init && (
         <Particles
           id="tsparticles"
@@ -38,14 +41,14 @@ const BackGround = () => {
                 value: { min: 2, max: 4 },
               },
               move: {
-                enable: true,
+                enable: !isBelow ? true : false,
                 speed: 2,
               },
             },
           }}
         />
       )}
-    </>
+    </div>
   );
 };
 export default BackGround;

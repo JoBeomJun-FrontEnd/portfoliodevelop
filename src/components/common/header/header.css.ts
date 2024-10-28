@@ -5,6 +5,7 @@ import { backgroundColorTransition } from '../../../styles/background.css';
 
 const HeaderButton = style([
   {
+    textWrap: 'nowrap',
     color: theme.color.white,
   },
   backgroundColorTransition('orange400'),
@@ -30,7 +31,7 @@ export const HeaderContainer = style({
 
 export const HeaderTitle = style([
   {
-    width: '100%',
+    textWrap: 'nowrap',
     color: theme.color.white,
   },
   font.size.xl3,

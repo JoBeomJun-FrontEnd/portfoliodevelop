@@ -20,6 +20,6 @@ export const HomeText = style([
     textAlign: 'center',
     paddingTop: '1rem',
   },
-  font.size.xl2,
+  font.size.xl3,
   font.weight.semiBold,
 ]);

@@ -1,7 +1,23 @@
+import { useEffect, useState } from 'react';
 import useScrollToStore from '../stores/useScrollToStore';
 
 const useScrollToHook = () => {
+  const [isBelow, setIsBelow] = useState(false);
   const { positions } = useScrollToStore();
+
+  useEffect(() => {
+    window.addEventListener('scroll', isBelowLearnSection);
+    isBelowLearnSection();
+
+    return () => {
+      window.removeEventListener('scroll', isBelowLearnSection);
+    };
+  }, [positions]);
+
+  const isBelowLearnSection = () => {
+    const scrollY = window.scrollY;
+    setIsBelow(scrollY > positions['Learn'] - 600);
+  };
 
   const handleScrollToSection = (key?: string) => {
     if (key !== undefined && positions[key] !== undefined) {
@@ -11,6 +27,6 @@ const useScrollToHook = () => {
     }
   };
 
-  return { handleScrollToSection };
+  return { isBelow, handleScrollToSection };
 };
 export default useScrollToHook;
