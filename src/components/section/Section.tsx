@@ -1,12 +1,10 @@
 import { ReactNode, useEffect, useRef } from 'react';
 import { SectionBackGround, SectionContainer, SectionTitle, SectionTitleColor } from './section.css';
 import useScrollToStore from '../../stores/useScrollToStore';
-import useScrollToHook from '../../hooks/useScrollToHook';
 
 const Section = ({ sectionName, children }: { sectionName?: string; children?: ReactNode }) => {
   const sectionRef = useRef<HTMLHeadingElement>(null);
-  const { setPositions } = useScrollToStore();
-  const { isBelow } = useScrollToHook();
+  const { isBelow, setPositions } = useScrollToStore();
 
   useEffect(() => {
     const { top } = sectionRef.current?.getBoundingClientRect() || { top: 0 };

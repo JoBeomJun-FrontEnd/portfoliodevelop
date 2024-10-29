@@ -1,23 +1,40 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import useScrollToStore from '../stores/useScrollToStore';
 
 const useScrollToHook = () => {
-  const [isBelow, setIsBelow] = useState(false);
-  const { positions } = useScrollToStore();
+  const { positions, setIsBelow } = useScrollToStore();
+  const learnRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    window.addEventListener('scroll', isBelowLearnSection);
-    isBelowLearnSection();
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          const { boundingClientRect, isIntersecting } = entry;
+
+          if (isIntersecting) {
+            setIsBelow(true);
+          } else if (!isIntersecting && boundingClientRect.bottom < 0) {
+            setIsBelow(true);
+          } else {
+            setIsBelow(false);
+          }
+        });
+      },
+      {
+        threshold: 0, // 요소가 1픽셀이라도 보이면 콜백 실행
+      }
+    );
+
+    if (learnRef.current) {
+      observer.observe(learnRef.current);
+    }
 
     return () => {
-      window.removeEventListener('scroll', isBelowLearnSection);
+      if (learnRef.current) {
+        observer.unobserve(learnRef.current);
+      }
     };
-  }, [positions]);
-
-  const isBelowLearnSection = () => {
-    const scrollY = window.scrollY;
-    setIsBelow(scrollY > positions['Learn'] - 600);
-  };
+  }, []);
 
   const handleScrollToSection = (key?: string) => {
     if (key !== undefined && positions[key] !== undefined) {
@@ -27,6 +44,6 @@ const useScrollToHook = () => {
     }
   };
 
-  return { isBelow, handleScrollToSection };
+  return { learnRef, handleScrollToSection };
 };
 export default useScrollToHook;
