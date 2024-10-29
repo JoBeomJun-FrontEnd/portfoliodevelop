@@ -6,7 +6,6 @@ export const BackgroundContainer = style({
 
 export const BackgroundIsBelow = styleVariants({
   true: {
-    display: 'none',
     opacity: 0,
   },
   false: {
