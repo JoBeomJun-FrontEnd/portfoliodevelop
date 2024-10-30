@@ -1,5 +1,5 @@
 import { initParticlesEngine, Particles } from '@tsparticles/react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { loadFull } from 'tsparticles';
 import { theme } from '../../styles/theme';
 import { BackgroundContainer, BackgroundIsBelow } from './background.css';

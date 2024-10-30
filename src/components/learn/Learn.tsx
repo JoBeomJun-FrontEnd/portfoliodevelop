@@ -1,13 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import {
-  LearnContainer,
-  LearnContainerVisible,
-  LearnDetail,
-  LearnPeriod,
-  LearnTitle,
-  LearnTitleSection,
-  LearnWraper,
-} from './learn.css';
+import { LearnWraper } from './learn.css';
+import Category from './category/Category';
 import useScrollToHook from '../../hooks/useScrollToHook';
 
 type LearnCategory = {
@@ -27,67 +19,14 @@ const Learn = () => {
     ],
   };
 
-  const [categoryVisibility, setCategoryVisibility] = useState<{ [key: string]: boolean }>({
-    유튜브: false,
-    인프런: false,
-    '드림코딩 아카데미': false,
-    '[유데미x스나이퍼팩토리] 프로젝트 캠프': false,
-  });
-
-  const refs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          const { boundingClientRect, isIntersecting, intersectionRatio } = entry;
-          const categoryName = (entry.target as HTMLElement).querySelector('h2')?.textContent?.trim();
-          if (categoryName) {
-            setCategoryVisibility(prev => ({
-              ...prev,
-              [categoryName]: (isIntersecting && intersectionRatio >= 0) || boundingClientRect.bottom < 0,
-            }));
-          }
-        });
-      },
-      {
-        threshold: [0, 1],
-      }
-    );
-
-    refs.current.forEach(ref => {
-      if (ref) {
-        observer.observe(ref);
-      }
-    });
-
-    return () => {
-      refs.current.forEach(ref => {
-        if (ref) {
-          observer.unobserve(ref);
-        }
-      });
-    };
-  }, []);
-
   return (
-    <div className={LearnWraper} ref={learnRef}>
-      {Object.entries(learnElement).map(([category, details], index) => (
-        <div
-          key={category}
-          ref={el => (refs.current[index] = el)}
-          className={`${LearnContainer} ${
-            categoryVisibility[category] ? LearnContainerVisible.visible : LearnContainerVisible.hidden
-          }`}
-        >
-          <div className={LearnTitleSection}>
-            <h2 className={LearnTitle}>{category}</h2>
-            <p className={LearnPeriod}>{details[0]}</p>
-          </div>
-          <p className={LearnDetail}>{details[1]}</p>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className={LearnWraper} ref={learnRef}>
+        {Object.entries(learnElement).map(([category, details], index) => (
+          <Category key={index} category={category} details={details} />
+        ))}
+      </div>
+    </>
   );
 };
 export default Learn;

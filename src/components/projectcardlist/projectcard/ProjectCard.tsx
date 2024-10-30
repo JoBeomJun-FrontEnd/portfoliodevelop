@@ -15,7 +15,7 @@ import {
   ProjectCardInfo,
   ProjectCardVisible,
 } from './projectcard.css';
-import useFlipOnViewHook from '../../../hooks/useFlipOnViewHook';
+import isBelowHook from '../../../hooks/isBelowHook';
 
 type ProjectCardProps = {
   keyProp: string;
@@ -23,23 +23,24 @@ type ProjectCardProps = {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ keyProp }) => {
   const { projects, setPopUpActive } = useProjectCardStore();
-  const { isVisible, elementRef } = useFlipOnViewHook();
+  const { isVisible, elementRef } = isBelowHook(200);
 
-  const renderCard = () => {
-    if (projects[keyProp].title !== undefined) {
-      return (
+  const { title, personnel, subtitle, info, link, gitHubLink, imageLink, library } = projects[keyProp];
+
+  return (
+    <>
+      {title !== undefined && (
         <div
+          data-key={title}
           ref={elementRef}
           className={`${ProjectCardContainer} ${isVisible ? ProjectCardVisible.visible : ProjectCardVisible.hidden}`}
         >
-          {projects[keyProp].title && <h4 className={ProjectCardTitle}>{projects[keyProp].title}</h4>}
-          {projects[keyProp].personnel && (
-            <p className={ProjectCardPersonnel}>{projects[keyProp].personnel}인 프로젝트</p>
-          )}
-          {projects[keyProp].subtitle && <h5 className={ProjectCardSubTitle}>{projects[keyProp].subtitle}</h5>}
-          {projects[keyProp].info && (
+          {title && <h4 className={ProjectCardTitle}>{title}</h4>}
+          {personnel && <p className={ProjectCardPersonnel}>{personnel}인 프로젝트</p>}
+          {subtitle && <h5 className={ProjectCardSubTitle}>{subtitle}</h5>}
+          {info && (
             <ul className={ProjectCardInfoContainer}>
-              {projects[keyProp].info.map(info => {
+              {info.map(info => {
                 return (
                   <li className={ProjectCardInfo} key={info}>
                     {info}
@@ -48,14 +49,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ keyProp }) => {
               })}
             </ul>
           )}
-          {projects[keyProp].link && (
-            <A className={ProjectCardLink} href={projects[keyProp].link}>
+          {link && (
+            <A className={ProjectCardLink} href={link}>
               사이트 링크
             </A>
           )}
-          {projects[keyProp].library && (
+          {library && (
             <div className={ProjectCardLibraryContainer}>
-              {projects[keyProp].library.map(library => {
+              {library.map(library => {
                 return (
                   <div key={library} className={ProjectCardLibrary}>
                     {library}
@@ -65,28 +66,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ keyProp }) => {
             </div>
           )}
           <div className={ProjectCardOtherContainer}>
-            {projects[keyProp].gitHubLink && (
-              <A className={ProjectCardOther} href={projects[keyProp].gitHubLink}>
+            {gitHubLink && (
+              <A className={ProjectCardOther} href={gitHubLink}>
                 <img src={github} alt="github" />
                 깃허브 링크
               </A>
             )}
-            {projects[keyProp].imageLink && (
-              <button
-                className={ProjectCardOther}
-                onClick={() => setPopUpActive(true, projects[keyProp].imageLink!)}
-                type="button"
-              >
+            {imageLink && (
+              <button className={ProjectCardOther} onClick={() => setPopUpActive(true, imageLink!)} type="button">
                 <img src={image} alt="image" />
                 이미지
               </button>
             )}
           </div>
         </div>
-      );
-    }
-  };
-
-  return <>{renderCard()}</>;
+      )}
+    </>
+  );
 };
 export default ProjectCard;
