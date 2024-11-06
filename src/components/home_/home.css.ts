@@ -6,6 +6,10 @@ export const HomeContiner = style({
   color: theme.color.white,
 });
 
+export const HomeBr = style({
+  width: '100px',
+});
+
 export const HomeTitle = style([
   {
     textAlign: 'center',

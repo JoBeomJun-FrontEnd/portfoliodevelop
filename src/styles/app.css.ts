@@ -14,3 +14,9 @@ export const OutletContainer = style({
   minWidth: '375px',
   width: '90%',
 });
+
+export const FlexColumnCenter = style({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+});

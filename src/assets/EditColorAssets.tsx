@@ -5,7 +5,7 @@ const loadSVG = (svgName: string) => {
     case 'top_up':
       return lazy(() => import('./topbutton/top_up.svg?react'));
     case 'hamburger':
-      return lazy(() => import('./header/hamburger-menu.svg?react'));
+      return lazy(() => import('./header/hamburger.svg?react'));
     default:
       return null;
   }

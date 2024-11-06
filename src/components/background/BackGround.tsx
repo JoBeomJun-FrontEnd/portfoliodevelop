@@ -1,5 +1,5 @@
 import { initParticlesEngine, Particles } from '@tsparticles/react';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { loadFull } from 'tsparticles';
 import { theme } from '../../styles/theme';
 import { BackgroundContainer, BackgroundIsBelow } from './background.css';
@@ -21,9 +21,7 @@ const BackGround = () => {
     <div className={`${BackgroundContainer} ${isBelow ? BackgroundIsBelow.true : BackgroundIsBelow.false}`}>
       {init && (
         <Particles
-          id="tsparticles"
           options={{
-            background: { color: theme.color.gray900 },
             particles: {
               number: {
                 value: 100,
@@ -32,17 +30,29 @@ const BackGround = () => {
                 },
               },
               color: {
-                value: theme.color.white,
+                value: isBelow ? theme.color.gray900 : theme.color.white,
               },
               shape: {
-                type: 'circle',
+                type: 'square',
+              },
+              opacity: {
+                value: 0.5,
               },
               size: {
-                value: { min: 2, max: 4 },
+                value: { min: 1, max: 3 },
+              },
+              links: {
+                enable: true,
+                distance: 100,
+                color: theme.color.blue500,
               },
               move: {
-                enable: !isBelow,
-                speed: 2,
+                enable: true,
+                speed: { min: 0.5, max: 1.5 },
+                outModes: 'bounce',
+              },
+              zIndex: {
+                value: -1,
               },
             },
           }}

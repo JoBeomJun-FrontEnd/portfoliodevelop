@@ -3,6 +3,7 @@ import {
   ImagePopUpBackGround,
   ImagePopUpBox,
   ImagePopUpCloseBox,
+  ImagePopUpCloseImage,
   ImagePopUpContent,
   ImagePopUpContentContainer,
 } from './imagepopup.css';
@@ -17,7 +18,6 @@ const ImagePopUp = () => {
   };
 
   const handleClickBox = (event: React.MouseEvent<HTMLDivElement>) => {
-    // 클릭 이벤트 전파 방지
     event.stopPropagation();
   };
 
@@ -33,7 +33,7 @@ const ImagePopUp = () => {
     <div className={ImagePopUpBackGround} onClick={handleClickBackGround}>
       <div className={ImagePopUpBox} onClick={handleClickBox}>
         <div className={ImagePopUpCloseBox}>
-          <img src={close} alt="close" onClick={handleClickBackGround} />
+          <img src={close} className={ImagePopUpCloseImage} alt="close" onClick={handleClickBackGround} />
         </div>
         <div className={ImagePopUpContentContainer}>
           <img className={ImagePopUpContent} src={imageLink} alt="이미지" />
