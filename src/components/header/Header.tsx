@@ -7,12 +7,12 @@ import {
   HeaderTextContainerMove,
   HeaderHambuger,
 } from './header.css';
-import useScrollToHook from '../../../hooks/useScrollToHook';
-import Button from '../button/Button';
-import { HeaderHeight } from '../../../styles/app.css';
-import { widthSize } from '../../../styles/theme';
+import useScrollToHook from '../../hooks/useScrollToHook';
+import Button from '../common/button/Button';
+import { HeaderHeight } from '../../styles/app.css';
+import { widthSize } from '../../styles/theme';
 import { useEffect, useState } from 'react';
-import EditColorAssets from '../../../assets/EditColorAssets';
+import EditColorAssets from '../../assets/EditColorAssets';
 
 const Header = () => {
   const { handleScrollToSection } = useScrollToHook();

@@ -1,6 +1,6 @@
 import { theme } from '../../styles/theme';
 import { ColorType } from '../../types/colortype';
-import Frame from '../common/frame/Frame';
+import Frame from '../frame/Frame';
 import { SkillsCategory, SkillsContainer, SkillsElement, SkillsElements } from './skills.css';
 
 type SkillCategory = {
