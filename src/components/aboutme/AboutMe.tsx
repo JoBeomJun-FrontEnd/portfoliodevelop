@@ -1,6 +1,6 @@
 import { FlexColumnCenter } from '../../styles/app.css';
 import A from '../common/a/A';
-import Frame from '../common/frame/Frame';
+import Frame from '../frame/Frame';
 import {
   AboutMe_Element,
   AboutMe_Elements,

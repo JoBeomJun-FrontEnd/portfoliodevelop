@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { AppContainer, HeaderHeight, OutletContainer } from './styles/app.css';
-import Header from './components/common/header/Header';
+import Header from './components/header/Header';
 import TopButton from './components/common/topbutton/TopButton';
 import BackGround from './components/background/BackGround';
 

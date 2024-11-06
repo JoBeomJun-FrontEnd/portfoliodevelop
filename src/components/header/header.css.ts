@@ -1,7 +1,7 @@
-import { theme, mediaQueries } from '../../../styles/theme';
+import { theme, mediaQueries } from '../../styles/theme';
 import { style, styleVariants } from '@vanilla-extract/css';
-import { font } from '../../../styles/font.css';
-import { backgroundColorTransition } from '../../../styles/background.css';
+import { font } from '../../styles/font.css';
+import { backgroundColorTransition } from '../../styles/background.css';
 
 const HeaderButton = style([
   {
