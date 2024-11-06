@@ -38,6 +38,10 @@ export const ImagePopUpCloseBox = style({
   height: '36px',
 });
 
+export const ImagePopUpCloseImage = style({
+  cursor: 'pointer',
+});
+
 export const ImagePopUpContentContainer = style({
   display: 'flex',
   minHeight: '438px',

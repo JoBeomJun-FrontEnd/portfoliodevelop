@@ -1,14 +1,19 @@
 import { style, styleVariants } from '@vanilla-extract/css';
+import { theme } from '../../styles/theme';
 
 export const BackgroundContainer = style({
-  transition: 'opacity 0.3s',
+  position: 'fixed',
+  width: '100vw',
+  height: '100vh',
+  backgroundColor: theme.color.gray900,
+  transition: 'background-color 0.3s',
 });
 
 export const BackgroundIsBelow = styleVariants({
   true: {
-    opacity: 0,
+    backgroundColor: theme.color.white,
   },
   false: {
-    opacity: 1,
+    backgroundColor: theme.color.gray900,
   },
 });

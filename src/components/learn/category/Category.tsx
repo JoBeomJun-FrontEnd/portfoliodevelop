@@ -1,4 +1,3 @@
-import React from 'react';
 import isBelowHook from '../../../hooks/isBelowHook';
 import {
   CategoryContainer,

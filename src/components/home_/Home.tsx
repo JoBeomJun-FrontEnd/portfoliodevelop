@@ -1,4 +1,4 @@
-import { HomeContiner, HomeText, HomeTitle } from './home.css';
+import { HomeBr, HomeContiner, HomeText, HomeTitle } from './home.css';
 
 const Home = () => {
   return (
@@ -7,7 +7,7 @@ const Home = () => {
         - 조범준 -<br />
         주니어 프론트 엔드 개발자
       </h1>
-      <hr style={{ width: '100px' }} />
+      <hr className={HomeBr} />
       <h2 className={HomeText}>새로운 시도를 두려워하지 않는 프론트엔드 개발자가 되겠습니다.</h2>
       <h2 className={HomeText}>
         배움에는 여러 가지 방법이 있지만 흐르는 물처럼 깊고 잔잔하게 꾸준히 공부하며 나아갈 것입니다.

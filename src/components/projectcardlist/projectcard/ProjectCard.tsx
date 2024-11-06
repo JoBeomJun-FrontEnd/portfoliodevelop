@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ keyProp }) => {
 
   return (
     <>
-      {title !== undefined && (
+      {title && (
         <div
           data-key={title}
           ref={elementRef}
@@ -84,4 +84,5 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ keyProp }) => {
     </>
   );
 };
+
 export default ProjectCard;

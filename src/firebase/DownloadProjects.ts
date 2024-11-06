@@ -23,7 +23,7 @@ export const DownloadProjects = () => {
         }
       });
     } catch (error) {
-      console.log('프로젝트 정보를 가져오는 중 오류 발생');
+      alert('프로젝트 정보를 가져오는 중 오류 발생. 새로고침 해주세요');
     } finally {
       setLoading(false);
     }

@@ -1,3 +1,4 @@
+import { FlexColumnCenter } from '../../styles/app.css';
 import A from '../common/a/A';
 import Frame from '../common/frame/Frame';
 import {
@@ -26,7 +27,7 @@ const AboutMe_ = () => {
       <div className={AboutMe_Element}>
         {infoElement.map((item, index) =>
           Object.entries(item).map(([key, value]) => (
-            <div key={`${key}-${index}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div key={`${key}-${index}`} className={FlexColumnCenter}>
               <div className={AboutMe_Text}>{key}</div>
               <div className={AboutMe_ElementText}>{value}</div>
             </div>
@@ -44,7 +45,7 @@ const AboutMe_ = () => {
           <A className={AboutMe_InfoButton} href="https://github.com/JoBeomJun-FrontEnd">
             GITHUB
           </A>
-          <A className={AboutMe_InfoButton} href="">
+          <A className={AboutMe_InfoButton} href="https://velog.io/@oreasvv/posts">
             BLOG
           </A>
         </div>
