@@ -2303,15 +2303,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/firebase@npm:^3.2.3":
-  version: 3.2.3
-  resolution: "@types/firebase@npm:3.2.3"
-  dependencies:
-    firebase: "npm:*"
-  checksum: 10c0/42d23ba272fc69dbc7ce9d1052f84eb3ce8b6473b6eedc1d84b9d23d1d611d800c25b0b7849424cfcee7674217a9fce73f3e9d3a965ae40e16b80c635e61dc67
-  languageName: node
-  linkType: hard
-
 "@types/json-schema@npm:^7.0.15":
   version: 7.0.15
   resolution: "@types/json-schema@npm:7.0.15"
@@ -3736,7 +3727,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"firebase@npm:*, firebase@npm:^10.14.1":
+"firebase@npm:^10.14.1":
   version: 10.14.1
   resolution: "firebase@npm:10.14.1"
   dependencies:
@@ -4083,7 +4074,6 @@ __metadata:
     "@tanstack/react-query-devtools": "npm:^5.59.0"
     "@tsparticles/engine": "npm:^3.5.0"
     "@tsparticles/react": "npm:^3.0.0"
-    "@types/firebase": "npm:^3.2.3"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@vanilla-extract/css": "npm:^1.16.0"
