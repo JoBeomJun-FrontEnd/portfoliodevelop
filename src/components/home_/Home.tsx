@@ -5,7 +5,7 @@ const Home = () => {
     <div className={HomeContiner}>
       <h1 className={HomeTitle}>
         - 조범준 -<br />
-        주니어 프론트 엔드 개발자
+        주니어 프론트엔드 개발자
       </h1>
       <hr className={HomeBr} />
       <h2 className={HomeText}>새로운 시도를 두려워하지 않는 프론트엔드 개발자가 되겠습니다.</h2>

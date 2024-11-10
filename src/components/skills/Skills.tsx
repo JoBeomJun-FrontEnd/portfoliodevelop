@@ -13,11 +13,13 @@ const Skills = () => {
     {
       Frontend: [
         { blue400: 'React' },
+        { orange400: 'HTML5' },
         { brown600: 'Zustand' },
         { pink500: 'TanStackQuery' },
         { purple400: 'React Router' },
         { blue300: 'Tailwind CSS' },
         { yellow600: 'VanillaExtract CSS' },
+        { blue500: 'CSS3' },
       ],
     },
     { Backend: [{ yellow700: 'Firebase' }] },
